@@ -80,20 +80,20 @@
 <!-- prettier-ignore -->
 <SdkTabs
     js={`
-import SaaS from 'saaskit';
+import SaaS from 'saaskit'
 
-const db = new SaaS('${backendAbsUrl}');
+const db = new SaaS('${backendAbsUrl}')
 
 ...
 
 // example create data
-const data = ${JSON.stringify(Object.assign({}, baseData, CommonHelper.dummyCollectionSchemaData(collection)), null, 4)};
+const data = ${JSON.stringify(Object.assign({}, baseData, CommonHelper.dummyCollectionSchemaData(collection)), null, 2)}
 
-const record = await db.collection('${collection?.name}').create(data);
+const record = await db.collection('${collection?.name}').create(data)
 ` + (collection?.isAuth ?
 `
 // (optional) send an email verification request
-await db.collection('${collection?.name}').requestVerification('test@example.com');
+await db.collection('${collection?.name}').requestVerification('test@example.com')
 ` : ""
 )}
     dart={`

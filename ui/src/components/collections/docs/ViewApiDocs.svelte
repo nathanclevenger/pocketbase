@@ -53,15 +53,15 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
         const record = await db.collection('${collection?.name}').getOne('RECORD_ID', {
             expand: 'relField1,relField2.subRelField',
-        });
+        })
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

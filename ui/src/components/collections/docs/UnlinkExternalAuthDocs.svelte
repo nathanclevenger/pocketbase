@@ -60,18 +60,18 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
-        await db.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '123456')
 
         await db.collection('${collection?.name}').unlinkExternalAuth(
             db.authStore.model.id,
             'google'
-        );
+        )
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

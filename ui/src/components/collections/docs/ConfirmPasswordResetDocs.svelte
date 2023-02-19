@@ -42,9 +42,9 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
@@ -52,7 +52,7 @@
             'TOKEN',
             'NEW_PASSWORD',
             'NEW_PASSWORD_CONFIRM',
-        );
+        )
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

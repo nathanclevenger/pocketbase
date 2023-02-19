@@ -42,13 +42,13 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
-        await db.collection('${collection?.name}').requestPasswordReset('test@example.com');
+        await db.collection('${collection?.name}').requestPasswordReset('test@example.com')
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

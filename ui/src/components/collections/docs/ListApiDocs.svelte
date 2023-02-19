@@ -69,26 +69,26 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
         // fetch a paginated records list
         const resultList = await db.collection('${collection?.name}').getList(1, 50, {
             filter: 'created >= "2022-01-01 00:00:00" && someField1 != someField2',
-        });
+        })
 
         // you can also fetch all records at once via getFullList
         const records = await db.collection('${collection?.name}').getFullList(200 /* batch size */, {
             sort: '-created',
-        });
+        })
 
         // or fetch only the first record that matches the specified filter
         const record = await db.collection('${collection?.name}').getFirstListItem('someField="test"', {
             expand: 'relField1,relField2.subRelField',
-        });
+        })
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

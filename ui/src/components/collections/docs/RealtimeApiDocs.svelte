@@ -41,29 +41,29 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
         // (Optionally) authenticate
-        await db.collection('users').authWithPassword('test@example.com', '123456');
+        await db.collection('users').authWithPassword('test@example.com', '123456')
 
         // Subscribe to changes in any ${collection?.name} record
         db.collection('${collection?.name}').subscribe('*', function (e) {
-            console.log(e.record);
+            console.log(e.record)
         });
 
         // Subscribe to changes only in the specified record
         db.collection('${collection?.name}').subscribe('RECORD_ID', function (e) {
-            console.log(e.record);
+            console.log(e.record)
         });
 
         // Unsubscribe
-        db.collection('${collection?.name}').unsubscribe('RECORD_ID'); // remove all 'RECORD_ID' subscriptions
-        db.collection('${collection?.name}').unsubscribe('*'); // remove all '*' topic subscriptions
-        db.collection('${collection?.name}').unsubscribe(); // remove all subscriptions in the collection
+        db.collection('${collection?.name}').unsubscribe('RECORD_ID') // remove all 'RECORD_ID' subscriptions
+        db.collection('${collection?.name}').unsubscribe('*') // remove all '*' topic subscriptions
+        db.collection('${collection?.name}').unsubscribe() // remove all subscriptions in the collection
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

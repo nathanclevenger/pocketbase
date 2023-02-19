@@ -72,24 +72,24 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
         const authData = await db.collection('${collection?.name}').authWithPassword(
             '${exampleIdentityLabel}',
             'YOUR_PASSWORD',
-        );
+        )
 
         // after the above you can also access the auth data from the authStore
-        console.log(db.authStore.isValid);
-        console.log(db.authStore.token);
-        console.log(db.authStore.model.id);
+        console.log(db.authStore.isValid)
+        console.log(db.authStore.token)
+        console.log(db.authStore.model.id)
 
         // "logout" the last authenticated account
-        db.authStore.clear();
+        db.authStore.clear()
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

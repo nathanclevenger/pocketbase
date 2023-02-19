@@ -58,13 +58,13 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
-        const result = await db.collection('${collection?.name}').listAuthMethods();
+        const result = await db.collection('${collection?.name}').listAuthMethods()
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';

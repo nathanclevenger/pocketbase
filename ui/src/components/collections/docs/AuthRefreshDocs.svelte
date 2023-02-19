@@ -73,18 +73,18 @@
 
 <SdkTabs
     js={`
-        import SaaS from 'saaskit';
+        import SaaS from 'saaskit'
 
-        const db = new SaaS('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}')
 
         ...
 
-        const authData = await db.collection('${collection?.name}').authRefresh();
+        const authData = await db.collection('${collection?.name}').authRefresh()
 
         // after the above you can also access the refreshed auth data from the authStore
-        console.log(db.authStore.isValid);
-        console.log(db.authStore.token);
-        console.log(db.authStore.model.id);
+        console.log(db.authStore.isValid)
+        console.log(db.authStore.token)
+        console.log(db.authStore.model.id)
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';
