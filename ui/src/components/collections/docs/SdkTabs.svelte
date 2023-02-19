@@ -13,7 +13,7 @@
 
     $: if (activeTab) {
         // store user preference
-        localStorage.setItem(SDK_PREFERENCE_KEY, activeTab);
+        localStorage.setItem(SDK_PREFERENCE_KEY, activeTab)
     }
 
     $: sdkExamples = [
