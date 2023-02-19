@@ -80,20 +80,20 @@
 <!-- prettier-ignore -->
 <SdkTabs
     js={`
-import PocketBase from 'pocketbase';
+import SaaS from 'saaskit';
 
-const pb = new PocketBase('${backendAbsUrl}');
+const db = new SaaS('${backendAbsUrl}');
 
 ...
 
 // example create data
 const data = ${JSON.stringify(Object.assign({}, baseData, CommonHelper.dummyCollectionSchemaData(collection)), null, 4)};
 
-const record = await pb.collection('${collection?.name}').create(data);
+const record = await db.collection('${collection?.name}').create(data);
 ` + (collection?.isAuth ?
 `
 // (optional) send an email verification request
-await pb.collection('${collection?.name}').requestVerification('test@example.com');
+await db.collection('${collection?.name}').requestVerification('test@example.com');
 ` : ""
 )}
     dart={`
@@ -106,11 +106,11 @@ final pb = PocketBase('${backendAbsUrl}');
 // example create body
 final body = <String, dynamic>${JSON.stringify(Object.assign({}, baseData, CommonHelper.dummyCollectionSchemaData(collection)), null, 2)};
 
-final record = await pb.collection('${collection?.name}').create(body: body);
+final record = await db.collection('${collection?.name}').create(body: body);
 ` + (collection?.isAuth ?
 `
 // (optional) send an email verification request
-await pb.collection('${collection?.name}').requestVerification('test@example.com');
+await db.collection('${collection?.name}').requestVerification('test@example.com');
 ` : ""
 )}
 />

@@ -42,13 +42,13 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').confirmPasswordReset(
+        await db.collection('${collection?.name}').confirmPasswordReset(
             'TOKEN',
             'NEW_PASSWORD',
             'NEW_PASSWORD_CONFIRM',
@@ -61,7 +61,7 @@
 
         ...
 
-        await pb.collection('${collection?.name}').confirmPasswordReset(
+        await db.collection('${collection?.name}').confirmPasswordReset(
           'TOKEN',
           'NEW_PASSWORD',
           'NEW_PASSWORD_CONFIRM',

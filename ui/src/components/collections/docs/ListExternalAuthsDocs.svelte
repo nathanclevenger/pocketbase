@@ -81,16 +81,16 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
 
-        const result = await pb.collection('${collection?.name}').listExternalAuths(
-            pb.authStore.model.id
+        const result = await db.collection('${collection?.name}').listExternalAuths(
+            db.authStore.model.id
         );
     `}
     dart={`
@@ -100,10 +100,10 @@
 
         ...
 
-        await pb.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
 
-        final result = await pb.collection('${collection?.name}').listExternalAuths(
-          pb.authStore.model.id,
+        final result = await db.collection('${collection?.name}').listExternalAuths(
+          db.authStore.model.id,
         );
     `}
 />

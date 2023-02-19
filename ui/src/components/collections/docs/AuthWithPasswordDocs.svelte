@@ -72,24 +72,24 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        const authData = await pb.collection('${collection?.name}').authWithPassword(
+        const authData = await db.collection('${collection?.name}').authWithPassword(
             '${exampleIdentityLabel}',
             'YOUR_PASSWORD',
         );
 
         // after the above you can also access the auth data from the authStore
-        console.log(pb.authStore.isValid);
-        console.log(pb.authStore.token);
-        console.log(pb.authStore.model.id);
+        console.log(db.authStore.isValid);
+        console.log(db.authStore.token);
+        console.log(db.authStore.model.id);
 
         // "logout" the last authenticated account
-        pb.authStore.clear();
+        db.authStore.clear();
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';
@@ -98,18 +98,18 @@
 
         ...
 
-        final authData = await pb.collection('${collection?.name}').authWithPassword(
+        final authData = await db.collection('${collection?.name}').authWithPassword(
           '${exampleIdentityLabel}',
           'YOUR_PASSWORD',
         );
 
         // after the above you can also access the auth data from the authStore
-        print(pb.authStore.isValid);
-        print(pb.authStore.token);
-        print(pb.authStore.model.id);
+        print(db.authStore.isValid);
+        print(db.authStore.token);
+        print(db.authStore.model.id);
 
         // "logout" the last authenticated account
-        pb.authStore.clear();
+        db.authStore.clear();
     `}
 />
 

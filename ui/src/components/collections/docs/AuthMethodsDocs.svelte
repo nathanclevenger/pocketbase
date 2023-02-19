@@ -58,13 +58,13 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        const result = await pb.collection('${collection?.name}').listAuthMethods();
+        const result = await db.collection('${collection?.name}').listAuthMethods();
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';
@@ -73,7 +73,7 @@
 
         ...
 
-        final result = await pb.collection('${collection?.name}').listAuthMethods();
+        final result = await db.collection('${collection?.name}').listAuthMethods();
     `}
 />
 

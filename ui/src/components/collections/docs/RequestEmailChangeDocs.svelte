@@ -62,15 +62,15 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').authWithPassword('test@example.com', '1234567890');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '1234567890');
 
-        await pb.collection('${collection?.name}').requestEmailChange('new@example.com');
+        await db.collection('${collection?.name}').requestEmailChange('new@example.com');
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';
@@ -79,9 +79,9 @@
 
         ...
 
-        await pb.collection('${collection?.name}').authWithPassword('test@example.com', '1234567890');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '1234567890');
 
-        await pb.collection('${collection?.name}').requestEmailChange('new@example.com');
+        await db.collection('${collection?.name}').requestEmailChange('new@example.com');
     `}
 />
 

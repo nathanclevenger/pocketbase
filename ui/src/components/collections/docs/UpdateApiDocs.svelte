@@ -90,16 +90,16 @@
 <!-- prettier-ignore -->
 <SdkTabs
     js={`
-import PocketBase from 'pocketbase';
+import SaaS from 'saaskit';
 
-const pb = new PocketBase('${backendAbsUrl}');
+const db = new SaaS('${backendAbsUrl}');
 
 ...
 
 // example update data
 const data = ${JSON.stringify(Object.assign({}, baseData, CommonHelper.dummyCollectionSchemaData(collection)), null, 4)};
 
-const record = await pb.collection('${collection?.name}').update('RECORD_ID', data);
+const record = await db.collection('${collection?.name}').update('RECORD_ID', data);
     `}
     dart={`
 import 'package:pocketbase/pocketbase.dart';
@@ -111,7 +111,7 @@ final pb = PocketBase('${backendAbsUrl}');
 // example update body
 final body = <String, dynamic>${JSON.stringify(Object.assign({}, baseData, CommonHelper.dummyCollectionSchemaData(collection)), null, 2)};
 
-final record = await pb.collection('${collection?.name}').update('RECORD_ID', body: body);
+final record = await db.collection('${collection?.name}').update('RECORD_ID', body: body);
     `}
 />
 

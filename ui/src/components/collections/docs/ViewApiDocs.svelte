@@ -53,13 +53,13 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        const record = await pb.collection('${collection?.name}').getOne('RECORD_ID', {
+        const record = await db.collection('${collection?.name}').getOne('RECORD_ID', {
             expand: 'relField1,relField2.subRelField',
         });
     `}
@@ -70,7 +70,7 @@
 
         ...
 
-        final record = await pb.collection('${collection?.name}').getOne('RECORD_ID',
+        final record = await db.collection('${collection?.name}').getOne('RECORD_ID',
           'expand': 'relField1,relField2.subRelField',
         );
     `}

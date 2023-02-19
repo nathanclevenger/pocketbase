@@ -69,24 +69,24 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
         // fetch a paginated records list
-        const resultList = await pb.collection('${collection?.name}').getList(1, 50, {
+        const resultList = await db.collection('${collection?.name}').getList(1, 50, {
             filter: 'created >= "2022-01-01 00:00:00" && someField1 != someField2',
         });
 
         // you can also fetch all records at once via getFullList
-        const records = await pb.collection('${collection?.name}').getFullList(200 /* batch size */, {
+        const records = await db.collection('${collection?.name}').getFullList(200 /* batch size */, {
             sort: '-created',
         });
 
         // or fetch only the first record that matches the specified filter
-        const record = await pb.collection('${collection?.name}').getFirstListItem('someField="test"', {
+        const record = await db.collection('${collection?.name}').getFirstListItem('someField="test"', {
             expand: 'relField1,relField2.subRelField',
         });
     `}
@@ -98,20 +98,20 @@
         ...
 
         // fetch a paginated records list
-        final resultList = await pb.collection('${collection?.name}').getList(
+        final resultList = await db.collection('${collection?.name}').getList(
           page: 1,
           perPage: 50,
           filter: 'created >= "2022-01-01 00:00:00" && someField1 != someField2',
         );
 
         // you can also fetch all records at once via getFullList
-        final records = await pb.collection('${collection?.name}').getFullList(
+        final records = await db.collection('${collection?.name}').getFullList(
           batch: 200,
           sort: '-created',
         );
 
         // or fetch only the first record that matches the specified filter
-        final record = await pb.collection('${collection?.name}').getFirstListItem(
+        final record = await db.collection('${collection?.name}').getFirstListItem(
           'someField="test"',
           expand: 'relField1,relField2.subRelField',
         );

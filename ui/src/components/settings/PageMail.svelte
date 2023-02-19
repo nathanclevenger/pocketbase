@@ -165,7 +165,7 @@
                         <i
                             class="ri-information-line link-hint"
                             use:tooltip={{
-                                text: 'By default PocketBase uses the unix "sendmail" command for sending emails. For better emails deliverability it is recommended to use a SMTP mail server.',
+                                text: 'By default SaaS.Dev uses the unix "sendmail" command for sending emails. For better emails deliverability it is recommended to use a SMTP mail server.',
                                 position: "top",
                             }}
                         />

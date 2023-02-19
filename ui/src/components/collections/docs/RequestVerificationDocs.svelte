@@ -42,13 +42,13 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').requestVerification('test@example.com');
+        await db.collection('${collection?.name}').requestVerification('test@example.com');
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';
@@ -57,7 +57,7 @@
 
         ...
 
-        await pb.collection('${collection?.name}').requestVerification('test@example.com');
+        await db.collection('${collection?.name}').requestVerification('test@example.com');
     `}
 />
 

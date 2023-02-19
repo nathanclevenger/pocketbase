@@ -66,13 +66,13 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').delete('RECORD_ID');
+        await db.collection('${collection?.name}').delete('RECORD_ID');
     `}
     dart={`
         import 'package:pocketbase/pocketbase.dart';
@@ -81,7 +81,7 @@
 
         ...
 
-        await pb.collection('${collection?.name}').delete('RECORD_ID');
+        await db.collection('${collection?.name}').delete('RECORD_ID');
     `}
 />
 

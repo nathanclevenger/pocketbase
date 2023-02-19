@@ -60,16 +60,16 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
 
-        await pb.collection('${collection?.name}').unlinkExternalAuth(
-            pb.authStore.model.id,
+        await db.collection('${collection?.name}').unlinkExternalAuth(
+            db.authStore.model.id,
             'google'
         );
     `}
@@ -80,10 +80,10 @@
 
         ...
 
-        await pb.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
+        await db.collection('${collection?.name}').authWithPassword('test@example.com', '123456');
 
-        await pb.collection('${collection?.name}').unlinkExternalAuth(
-          pb.authStore.model.id,
+        await db.collection('${collection?.name}').unlinkExternalAuth(
+          db.authStore.model.id,
           'google',
         );
     `}

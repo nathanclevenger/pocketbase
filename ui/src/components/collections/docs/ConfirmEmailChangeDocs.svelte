@@ -42,13 +42,13 @@
 
 <SdkTabs
     js={`
-        import PocketBase from 'pocketbase';
+        import SaaS from 'saaskit';
 
-        const pb = new PocketBase('${backendAbsUrl}');
+        const db = new SaaS('${backendAbsUrl}');
 
         ...
 
-        await pb.collection('${collection?.name}').confirmEmailChange(
+        await db.collection('${collection?.name}').confirmEmailChange(
             'TOKEN',
             'YOUR_PASSWORD',
         );
@@ -60,7 +60,7 @@
 
         ...
 
-        await pb.collection('${collection?.name}').confirmEmailChange(
+        await db.collection('${collection?.name}').confirmEmailChange(
           'TOKEN',
           'YOUR_PASSWORD',
         );

@@ -23,12 +23,12 @@
             content: js,
             url: import.meta.env.PB_JS_SDK_URL,
         },
-        {
-            title: "Dart",
-            language: "dart",
-            content: dart,
-            url: import.meta.env.PB_DART_SDK_URL,
-        },
+        // {
+        //     title: "Dart",
+        //     language: "dart",
+        //     content: dart,
+        //     url: import.meta.env.PB_DART_SDK_URL,
+        // },
     ];
 </script>
 
