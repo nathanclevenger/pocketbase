@@ -15,7 +15,7 @@
                         width="40"
                         height="40"
                     />
-                    <span class="txt">Pocket<strong>Base</strong></span>
+                    <span class="txt"><strong>SaaS</strong>.Dev</span>
                 </figure>
             </div>
             <div class="clearfix" />
